@@ -1,593 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Magizh Construction | Tirumangalam & Madurai</title>
-<style>
-  /* Reset & Base Styles */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(135deg, #f3f8ff, #e0f7fa);
-    color: #333;
-  }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magizh Construction | Tirumangalam & Madurai</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* Header with Gradient & Effects */
-header {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
-.logo {
-  height: 150px;
-  width: 150px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-.logo:hover {
-  transform: rotate(10deg) scale(1.1);
-}
-.header-text {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-}
-.header-text h1 {
-  font-size: 3em;
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  animation: slideInFromLeft 1s ease-out;
-}
-.header-text p {
-  font-size: 1.2em;
-  animation: fadeIn 2s ease-in;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f3f8ff, #e0f7fa);
+            color: #333;
+        }
 
-/* Navigation with hover effects */
-nav {
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  padding: 12px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(8px);
-  transition: background-color 0.3s;
-}
-nav a {
-  color: #333;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1em;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-nav a:hover {
-  background: linear-gradient(45deg, #ff6f00, #ff8f00);
-  color: #fff;
-  transform: scale(1.05);
-}
+        /* Header with Gradient & Effects */
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Sections with floating animations and shadows */
-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 30px auto;
-  background: rgba(255,255,255,0.8);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-section:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-}
-h2 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  position: relative;
-  color: #333;
-  font-family: 'Arial Rounded MT Bold', cursive;
-  animation: pulse 2s infinite;
-}
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #ff6f00, #ff8f00);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
+        .logo {
+            height: 150px;
+            width: 150px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
 
-/* About Section with animated partner image and centered title */
-#about {
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#about h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2.5em;
-  color: #444;
-  font-family: 'Arial Rounded MT Bold', cursive;
-  animation: bounceInDown 1s ease;
-}
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-#partner-image-container {
-  width: 250px;
-  height: 300px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  border: 3px solid #fff;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  animation: floatUpDown 3s ease-in-out infinite;
-}
-#partner-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.description {
-  max-width: 600px;
-  text-align: center;
-  font-size: 1.2em;
-  padding: 20px;
-  color: #555;
-  line-height: 1.6;
-  animation: fadeInUp 2s ease;
-}
+            .logo:hover {
+                transform: rotate(10deg) scale(1.1);
+            }
 
-/* Services with hover effects and hover glow */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-.service-card {
-  background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  transition: all 0.4s;
-}
-.service-card:hover {
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  transform: translateY(-8px);
-}
-.service-card h3 {
-  margin-bottom: 15px;
-  color: #e91e63;
-  font-family: 'Arial Rounded MT Bold', cursive;
-  font-size: 1.5em;
-}
-.service-card p {
-  font-size: 1em;
-  color: #555;
-}
+        .header-text {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+        }
 
-/* Gallery with animated hover zoom */
-#gallery-container {
-  text-align: center;
-  margin-bottom: 30px;
-}
-#gallery-title {
-  font-size: 2.2em;
-  color: #009688;
-  margin-bottom: 20px;
-  animation: pulse 2s infinite;
-}
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.gallery-item {
-  width: 200px;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+            .header-text h1 {
+                font-size: 3em;
+                letter-spacing: 3px;
+                margin-bottom: 8px;
+                font-weight: bold;
+                animation: slideInFromLeft 1s ease-out;
+            }
 
-/* Parallel Materials, Estimate & Quotation with animated cards */
-#parallel-section {
-  padding: 60px 20px;
-}
-#parallel-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  color: #673ab7;
-  text-align: center;
-  font-family: 'Arial Rounded MT Bold', cursive;
-  animation: pulse 2s infinite;
-}
-#parallel-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-#materials-card, #estimate-card, #quote-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-}
-#materials-card:hover, #estimate-card:hover, #quote-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  transform: translateY(-8px);
-  border: 2px solid #ff5722;
-}
-h3 {
-  margin-bottom: 15px;
-  color: #ff5722;
-  font-family: 'Arial Rounded MT Bold', cursive;
-}
-ul {
-  margin-left: 20px;
-  list-style: inside disc;
-  font-size: 1em;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-label {
-  margin-top: 10px;
-  font-weight: 600;
-}
-input, select, textarea {
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-input:focus, select:focus, textarea:focus {
-  border-color: #2196f3;
-  box-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
-}
-button {
-  margin-top: 15px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #ff6f00, #ff8f00);
-  color: #fff;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-button:hover {
-  background: linear-gradient(135deg, #ff3d00, #ff9100);
-  transform: scale(1.05);
-}
+            .header-text p {
+                font-size: 1.2em;
+                animation: fadeIn 2s ease-in;
+            }
 
-/* Partner Logos Carousel with animated movement */
-#partners {
-  background: linear-gradient(135deg, #c1e1ec, #f9f9f9);
-  padding: 50px 20px;
-  overflow: hidden;
-  position: relative;
-}
-#partners h2 {
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 30px;
-  color: #4caf50;
-  animation: pulse 2s infinite;
-}
-.logos-container {
-  display: flex;
-  animation: slideLeft 20s linear infinite;
-}
-.logo-item {
-  flex: 0 0 auto;
-  width: 150px;
-  margin: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo-item img {
-  max-width: 100%;
-  max-height: 80px;
-  object-fit: contain;
-  filter: grayscale(50%);
-  transition: filter 0.3s, transform 0.3s;
-}
-.logo-item img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.1);
-}
+        /* Navigation with hover effects */
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            backdrop-filter: blur(8px);
+            transition: background-color 0.3s;
+        }
 
-/* Footer with social icons and contact details */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 40px;
-}
-footer p {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-}
-.social-icons a {
-  color: #fff;
-  margin: 0 12px;
-  font-size: 1.8em;
-  display: inline-block;
-  transition: color 0.3s, transform 0.3s;
-}
-.social-icons a:hover {
-  color: #ff5722;
-  transform: rotate(10deg) scale(1.2);
-}
-#contact-details {
-  margin-top: 20px;
-  font-size: 1.2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#contact-details p {
-  margin: 8px 0;
-}
-#contact-details span {
-  font-weight: bold;
-  color: #ff5722;
-}
-@media(max-width: 768px){
-  header {
-    flex-direction: column;
-  }
-  .header-text {
-    padding: 10px;
-  }
-  nav {
-    flex-direction: column;
-  }
-  nav a {
-    margin: 8px 0;
-  }
-  #about {
-    flex-direction: column;
-  }
-  #about .about-container {
-    flex-direction: column;
-  }
-  #partner-image-container {
-    width: 80%;
-  }
-}
+            nav a {
+                color: #333;
+                margin: 0 20px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1.1em;
+                padding: 8px 12px;
+                border-radius: 8px;
+                transition: all 0.3s;
+            }
+
+                nav a:hover {
+                    background: linear-gradient(45deg, #ff6f00, #ff8f00);
+                    color: #fff;
+                    transform: scale(1.05);
+                }
+
+        /* Sections with floating animations and shadows */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            section:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            position: relative;
+            color: #333;
+            font-family: 'Arial Rounded MT Bold', cursive;
+            animation: pulse 2s infinite;
+        }
+
+            h2::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(135deg, #ff6f00, #ff8f00);
+                margin: 10px auto 0;
+                border-radius: 2px;
+            }
+
+        /* About Section with animated partner image and centered title */
+        #about {
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            #about h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 2.5em;
+                color: #444;
+                font-family: 'Arial Rounded MT Bold', cursive;
+                animation: bounceInDown 1s ease;
+            }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        #partner-image-container {
+            width: 250px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            border: 3px solid #fff;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            animation: floatUpDown 3s ease-in-out infinite;
+        }
+
+            #partner-image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .description {
+            max-width: 600px;
+            text-align: center;
+            font-size: 1.2em;
+            padding: 20px;
+            color: #555;
+            line-height: 1.6;
+            animation: fadeInUp 2s ease;
+        }
+
+        /* Services with hover effects and hover glow */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+            .service-card:hover {
+                background: linear-gradient(135deg, #ffecd2, #fcb69f);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+                transform: translateY(-8px);
+            }
+
+            .service-card h3 {
+                margin-bottom: 15px;
+                color: #e91e63;
+                font-family: 'Arial Rounded MT Bold', cursive;
+                font-size: 1.5em;
+            }
+
+            .service-card p {
+                font-size: 1em;
+                color: #555;
+            }
+
+        /* Gallery with animated hover zoom */
+        #gallery-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #gallery-title {
+            font-size: 2.2em;
+            color: #009688;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 200px;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+            .gallery-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        /* Parallel Materials, Estimate & Quotation with animated cards */
+        #parallel-section {
+            padding: 60px 20px;
+        }
+
+            #parallel-section h2 {
+                font-size: 2.5em;
+                margin-bottom: 30px;
+                color: #673ab7;
+                text-align: center;
+                font-family: 'Arial Rounded MT Bold', cursive;
+                animation: pulse 2s infinite;
+            }
+
+        #parallel-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        #materials-card, #estimate-card, #quote-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+        }
+
+            #materials-card:hover, #estimate-card:hover, #quote-card:hover {
+                box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+                transform: translateY(-8px);
+                border: 2px solid #ff5722;
+            }
+
+        h3 {
+            margin-bottom: 15px;
+            color: #ff5722;
+            font-family: 'Arial Rounded MT Bold', cursive;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: inside disc;
+            font-size: 1em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+            input:focus, select:focus, textarea:focus {
+                border-color: #2196f3;
+                box-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
+            }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ff6f00, #ff8f00);
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            button:hover {
+                background: linear-gradient(135deg, #ff3d00, #ff9100);
+                transform: scale(1.05);
+            }
+
+        /* Partner Logos Carousel with animated movement */
+        #partners {
+            background: linear-gradient(135deg, #c1e1ec, #f9f9f9);
+            padding: 50px 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            #partners h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 30px;
+                color: #4caf50;
+                animation: pulse 2s infinite;
+            }
+
+        .logos-container {
+            display: flex;
+            animation: slideLeft 20s linear infinite;
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            width: 150px;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .logo-item img {
+                max-width: 100%;
+                max-height: 80px;
+                object-fit: contain;
+                filter: grayscale(50%);
+                transition: filter 0.3s, transform 0.3s;
+            }
+
+                .logo-item img:hover {
+                    filter: grayscale(0%);
+                    transform: scale(1.1);
+                }
+
+        /* Footer with social icons and contact details */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+            footer p {
+                margin-bottom: 10px;
+                font-size: 1.1em;
+            }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 12px;
+            font-size: 1.8em;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+            .social-icons a:hover {
+                color: #ff5722;
+                transform: rotate(10deg) scale(1.2);
+            }
+
+        #contact-details {
+            margin-top: 20px;
+            font-size: 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            #contact-details p {
+                margin: 8px 0;
+            }
+
+            #contact-details span {
+                font-weight: bold;
+                color: #ff5722;
+            }
+
+        @media(max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .header-text {
+                padding: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+                nav a {
+                    margin: 8px 0;
+                }
+
+            #about {
+                flex-direction: column;
+            }
+
+                #about .about-container {
+                    flex-direction: column;
+                }
+
+            #partner-image-container {
+                width: 80%;
+            }
+        }
 
 
-@media (max-width: 500px) {
-  header {
-    padding: 15px 5px;
-  }
-  .logo {
-    height: 90px;
-    width: 90px;
-  }
-  .header-text h1 {
-    font-size: 2em;
-  }
-  .header-text p {
-    font-size: 1em;
-  }
-  nav {
-    flex-direction: column;
-    padding: 8px 0;
-  }
-  nav a {
-    margin: 5px 0;
-    font-size: 1em;
-    padding: 7px 8px;
-  }
-  section, #partners, footer {
-    padding: 30px 5px;
-    margin: 10px 0;
-    border-radius: 0;
-  }
-  .about-container,
-  #parallel-container {
-    flex-direction: column;
-    gap: 12px;
-  }
-  #partner-image-container {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-  }
-  .description {
-    font-size: 1em;
-    padding: 10px 0;
-  }
-  .services {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .gallery-item {
-    width: 100%;
-    min-width: 0;
-    aspect-ratio: 4/3;
-  }
-  .video-grid {
-    flex-direction: column !important;
-    gap: 12px !important;
-  }
-  .video-box {
-    width: 100% !important;
-    height: 200px !important;
-    min-width: 0 !important;
-  }
-  #parallel-container > div {
-    width: 100% !important;
-    min-width: 0;
-    margin-bottom: 12px;
-  }
-  .logos-container {
-    flex-wrap: wrap;
-    gap: 10px;
-    animation: none !important; /* prevent overflow on mobile */
-    justify-content: center;
-  }
-  .logo-item {
-    width: 90px;
-    margin: 5px;
-  }
-  footer {
-    font-size: 1em;
-    padding: 24px 5px;
-  }
-  #contact-details {
-    font-size: 1em;
-  }
-}
-  
-</style>
+        @media (max-width: 500px) {
+            header {
+                padding: 15px 5px;
+            }
+
+            .logo {
+                height: 90px;
+                width: 90px;
+            }
+
+            .header-text h1 {
+                font-size: 2em;
+            }
+
+            .header-text p {
+                font-size: 1em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 8px 0;
+            }
+
+                nav a {
+                    margin: 5px 0;
+                    font-size: 1em;
+                    padding: 7px 8px;
+                }
+
+            section, #partners, footer {
+                padding: 30px 5px;
+                margin: 10px 0;
+                border-radius: 0;
+            }
+
+            .about-container,
+            #parallel-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            #partner-image-container {
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+            }
+
+            .description {
+                font-size: 1em;
+                padding: 10px 0;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .gallery-item {
+                width: 100%;
+                min-width: 0;
+                aspect-ratio: 4/3;
+            }
+
+            .video-grid {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            .video-box {
+                width: 100% !important;
+                height: 200px !important;
+                min-width: 0 !important;
+            }
+
+            #parallel-container > div {
+                width: 100% !important;
+                min-width: 0;
+                margin-bottom: 12px;
+            }
+
+            .logos-container {
+                flex-wrap: wrap;
+                gap: 10px;
+                animation: none !important; /* prevent overflow on mobile */
+                justify-content: center;
+            }
+
+            .logo-item {
+                width: 90px;
+                margin: 5px;
+            }
+
+            footer {
+                font-size: 1em;
+                padding: 24px 5px;
+            }
+
+            #contact-details {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Header with Logo -->
-<header>
-  <img src="logo2.jpg" alt="Magizh Construction Logo" class="logo"/>
-  <div class="header-text">
-    <h1>Magizh Construction</h1>
-    <p>Your Trusted Construction Partner in Tirumangalam & Madurai</p>
-  </div>
-</header>
+    <!-- Header with Logo -->
+    <header>
+        <img src="logo2.jpg" alt="Magizh Construction Logo" class="logo" />
+        <div class="header-text">
+            <h1>Magizh Construction</h1>
+            <p>Your Trusted Construction Partner in Tirumangalam & Madurai</p>
+        </div>
+    </header>
 
-<!-- Navigation -->
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#gallery-container">Our Work Gallery</a>
-  <a href="#materials">Materials</a>
-  <a href="#parallel-section">Estimate & Quotation</a>
-  <a href="#partners">Partners</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery-container">Our Work Gallery</a>
+        <a href="#materials">Materials</a>
+        <a href="#parallel-section">Estimate & Quotation</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<!-- About Us with partner image and description side by side -->
-<section id="about">
-  <h2>About Magizh Construction</h2>
-  <div class="about-container">
-    <div id="partner-image-container">
-      <img src="chonu.jpg" alt="Managing Partner" />
-    </div>
-    <div class="description">
-      <p>
-        Magizh Construction, founded by K Vignesh Kumar, BE Civil Engineering, is a trusted construction company based in Tirumangalam, Madurai. Alongside my partner Ajith, we have established a reputation for excellence in building planning, plan approval, consultation, interior designing, and comprehensive construction services. Serving Tirumangalam and Madurai, we undertake projects of all sizes, ensuring 100% customer satisfaction with each completed project.
-      </p>
-    </div>
-  </div>
-</section>
+    <!-- About Us with partner image and description side by side -->
+    <section id="about">
+        <h2>About Magizh Construction</h2>
+        <div class="about-container">
+            <div id="partner-image-container">
+                <img src="chonu.jpg" alt="Managing Partner" />
+            </div>
+            <div class="description">
+                <p>
+                    Magizh Construction, founded by K Vignesh Kumar, BE Civil Engineering, is a trusted construction company based in Tirumangalam, Madurai. Alongside my partner Ajith, we have established a reputation for excellence in building planning, plan approval, consultation, interior designing, and comprehensive construction services. Serving Tirumangalam and Madurai, we undertake projects of all sizes, ensuring 100% customer satisfaction with each completed project.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- Services -->
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service-card">
-      <h3>Building Planning & Design</h3>
-      <p>Expert architectural planning tailored to your needs, ensuring efficient space utilization and aesthetic appeal.</p>
-    </div>
-    <div class="service-card">
-      <h3>Plan Approval & Permits</h3>
-      <p>Assistance with obtaining all necessary approvals and permits for smooth project execution.</p>
-    </div>
-    <div class="service-card">
-      <h3>Construction & Building Works</h3>
-      <p>Quality construction services for small and large-scale projects, adhering to timelines and standards.</p>
-    </div>
-    <div class="service-card">
-      <h3>Interior Planning & Designing</h3>
-      <p>Creative interior solutions to transform your spaces into functional and stylish environments.</p>
-    </div>
-    <div class="service-card">
-      <h3>House Construction</h3>
-      <p>Comprehensive house building services from foundation to finishing, ensuring quality and timely delivery.</p>
-    </div>
-    <div class="service-card">
-      <h3>2D & 3D Drawings</h3>
-      <p>Professional architectural drawings to visualize your project before construction begins.</p>
-    </div>
-    <div class="service-card">
-      <h3>Structural Designing</h3>
-      <p>Structural analysis and design ensuring safety, durability, and compliance with standards.</p>
-    </div>
-    <div class="service-card">
-      <h3>Interiors</h3>
-      <p>Elegant interior designing tailored to your taste and requirements.</p>
-    </div>
-  </div>
-</section>
+    <!-- Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Building Planning & Design</h3>
+                <p>Expert architectural planning tailored to your needs, ensuring efficient space utilization and aesthetic appeal.</p>
+            </div>
+            <div class="service-card">
+                <h3>Plan Approval & Permits</h3>
+                <p>Assistance with obtaining all necessary approvals and permits for smooth project execution.</p>
+            </div>
+            <div class="service-card">
+                <h3>Construction & Building Works</h3>
+                <p>Quality construction services for small and large-scale projects, adhering to timelines and standards.</p>
+            </div>
+            <div class="service-card">
+                <h3>Interior Planning & Designing</h3>
+                <p>Creative interior solutions to transform your spaces into functional and stylish environments.</p>
+            </div>
+            <div class="service-card">
+                <h3>House Construction</h3>
+                <p>Comprehensive house building services from foundation to finishing, ensuring quality and timely delivery.</p>
+            </div>
+            <div class="service-card">
+                <h3>2D & 3D Drawings</h3>
+                <p>Professional architectural drawings to visualize your project before construction begins.</p>
+            </div>
+            <div class="service-card">
+                <h3>Structural Designing</h3>
+                <p>Structural analysis and design ensuring safety, durability, and compliance with standards.</p>
+            </div>
+            <div class="service-card">
+                <h3>Interiors</h3>
+                <p>Elegant interior designing tailored to your taste and requirements.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Gallery of Work -->
-<section id="gallery-container">
-  <div style="text-align:center; margin-bottom:10px;">
-    <h2 id="gallery-title">Our Work Gallery</h2>
-  </div>
-  <div id="gallery">
-      <div class="gallery-item"><img src="work1.jpg" alt="Project 1" /></div>
-      <div class="gallery-item"><img src="work2.jpg" alt="Project 2" /></div>
-      <div class="gallery-item"><img src="work3.jpg" alt="Project 3" /></div>
-      <div class="gallery-item"><img src="work4.jpg" alt="Project 4" /></div>
-      <div class="gallery-item"><img src="work5.jpg" alt="Project 5" /></div>
-      <div class="gallery-item"><img src="work6.jpg" alt="Project 6" /></div>
-      <div class="gallery-item"><img src="work7.jpg" alt="Project 7" /></div>
-  </div>
-</section>
+    <!-- Gallery of Work -->
+    <section id="gallery-container">
+        <div style="text-align:center; margin-bottom:10px;">
+            <h2 id="gallery-title">Our Work Gallery</h2>
+        </div>
+        <div id="gallery">
+            <div class="gallery-item"><img src="work1.jpg" alt="Project 1" /></div>
+            <div class="gallery-item"><img src="work2.jpg" alt="Project 2" /></div>
+            <div class="gallery-item"><img src="work3.jpg" alt="Project 3" /></div>
+            <div class="gallery-item"><img src="work4.jpg" alt="Project 4" /></div>
+            <div class="gallery-item"><img src="work5.jpg" alt="Project 5" /></div>
+            <div class="gallery-item"><img src="work6.jpg" alt="Project 6" /></div>
+            <div class="gallery-item"><img src="work7.jpg" alt="Project 7" /></div>
+        </div>
+    </section>
 
-<!-- Projects & Videos -->
-<To embed your YouTube videos in the section, replace the placeholder divs with iframe elements pointing to your YouTube links. Here's an example assuming you have four YouTube video URLs:
-    ```html
+    <!-- Projects & Videos -->
+   
 <section id="projects">
   <div style="text-align:center; margin-bottom:10px;">
     <h2 style="color:#009688;">Projects</h2>
@@ -598,19 +673,19 @@ footer p {
   <div class="video-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;">
     <!-- Video 1 -->
     <div class="video-box" style="width:300px; height:200px;">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/shorts/6-IG0b3rVgk" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="1.mp4" frameborder="0" allowfullscreen></iframe>
     </div>
     <!-- Video 2 -->
     <div class="video-box" style="width:300px; height:200px;">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/shorts/6-IG0b3rVgk" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="2.mp4" frameborder="0" allowfullscreen></iframe>
     </div>
     <!-- Video 3 -->
     <div class="video-box" style="width:300px; height:200px;">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/shorts/6-IG0b3rVgk" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="3.mp4" frameborder="0" allowfullscreen></iframe>
     </div>
     <!-- Video 4 -->
     <div class="video-box" style="width:300px; height:200px;">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/shorts/6-IG0b3rVgk" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="4.mp4" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
