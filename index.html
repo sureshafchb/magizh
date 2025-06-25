@@ -404,6 +404,92 @@ footer p {
     width: 80%;
   }
 }
+
+
+@media (max-width: 500px) {
+  header {
+    padding: 15px 5px;
+  }
+  .logo {
+    height: 90px;
+    width: 90px;
+  }
+  .header-text h1 {
+    font-size: 2em;
+  }
+  .header-text p {
+    font-size: 1em;
+  }
+  nav {
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  nav a {
+    margin: 5px 0;
+    font-size: 1em;
+    padding: 7px 8px;
+  }
+  section, #partners, footer {
+    padding: 30px 5px;
+    margin: 10px 0;
+    border-radius: 0;
+  }
+  .about-container,
+  #parallel-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #partner-image-container {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+  .description {
+    font-size: 1em;
+    padding: 10px 0;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gallery-item {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4/3;
+  }
+  .video-grid {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .video-box {
+    width: 100% !important;
+    height: 200px !important;
+    min-width: 0 !important;
+  }
+  #parallel-container > div {
+    width: 100% !important;
+    min-width: 0;
+    margin-bottom: 12px;
+  }
+  .logos-container {
+    flex-wrap: wrap;
+    gap: 10px;
+    animation: none !important; /* prevent overflow on mobile */
+    justify-content: center;
+  }
+  .logo-item {
+    width: 90px;
+    margin: 5px;
+  }
+  footer {
+    font-size: 1em;
+    padding: 24px 5px;
+  }
+  #contact-details {
+    font-size: 1em;
+  }
+}
+  
 </style>
 </head>
 <body>
